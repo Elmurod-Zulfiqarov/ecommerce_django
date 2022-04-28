@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/styles.css">
+  <title>Online Shopping</title>
+
+  <style>
+    nav{
+      background-color: lightslategrey;
+    }
+    .one-edge-shadow {
+              box-shadow: 0 8px 2px -5px rgb(246, 245, 245);
+}
+.display-8{
+  font-weight: 200;
+  font-size: 30px;
+}
+  </style>
+</head>
+<body>
+  <!-- navbar -->
+  <nav class="one-edge-shadow sticky-top navbar navbar-expand-lg navbar-light bg-info">
+    <h2><a class="navbar-brand" style="color: crimson;" href="/"><b>Online Shop</b></a></h2>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <h2><a class="nav-link" style="color: chartreuse;" href="/store"><b>Store</b> <span class="sr-only">(current)</span></a></h2>
+        </li>
+
+      </ul>
+
+      <form class="d-flex mr-5">
+        <input class="form-control me-2" type="search" name="search" value="{{ search }}" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+
+      <ul class=" navbar-nav my-2 my-lg-0">
+        <li class="nav-item ">
+            <h4><a class="nav-link" style="color:indigo;" href="/cart">Cart 
+            <span class="badge badge-info">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a></h4>
+        </li>
+        {% if request.session.customer %}
+            <li class="nav-item ">
+              <h4><a class="nav-link" style="color:indigo;" href="/orders">Orders<span class="sr-only">(current)</span></a></h4>
+            </li>
+            <li class="nav-item ">
+              <h4><a class="nav-link" style="color:indigo;" href="/logout">Logout<span class="sr-only">(current)</span></a></h4>
+            </li>
+        {% else %}
+            <li class="nav-item ">
+              <h4><a class="nav-link" style="color:indigo;" href="/signup">Signup<span class="sr-only">(current)</span></a></h4>
+            </li>
+            <li class="nav-item ">
+              <h4><a class="nav-link" style="color:indigo" href="/login">Login<span class="sr-only">(current)</span></a></h4>
+            </li>
+        {% endif %}
+      </ul>
+
+
+    </div>
+  </nav>
+
+    {% block content %}
+    
+    {% endblock %}
+
+    <!-- FOOTER -->
+
+  <footer class="container-fluid">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-4 mt-2">
+          <h3><a href="#" class="">Delivery</a></h3>
+            <p class="font-weight"><b>Order Products Faster</b> <br> <b>Easier</b></p>
+        </div>
+        <div class="col-lg-3 mt-2">
+          <h3 class="">Services</h3>
+          <ul class="navbar">
+              <li class="nav-item"><a href="" class="nav-link disabled">Delivery free </a></li>
+              <li class="nav-item"><a href="" class="nav-link disabled">Remote payment </a></li>
+              <li class="nav-item"><a href="" class="nav-link disabled">Discounts </a></li>
+          </ul>
+        </div>
+      
+        <div class="col-lg-4 mt-2">
+          <h3 class="">Contact</h3>
+          <ul class="navbar">
+              <li class="nav-item"><a href="#" class="nav-link disabled">Email: online_shop@gmail.com</a></li>
+              <li class="nav-item"><a href="#" class="nav-link disabled">Phone: +998 123 65 49</a></li>
+              <li class="nav-item"><a href="#" class="nav-link disabled">Address: Tashkent city, 41-A</a></li>
+          </ul>
+      </div>
+    </div>
+    </div>
+    </footer>
+    <p class="text-center mb-0 pb-2 pt-2" style="background-color: darkgrey;"><b>&#169; Online Shopping. All right reserved</b></p>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+</html>

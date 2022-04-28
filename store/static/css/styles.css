@@ -1,0 +1,30 @@
+.container-fluid .col-lg-9 .card .images {
+	height: 250px;
+	width: 80%;
+
+}
+
+.container-fluid .col-lg-9 .card .card-footer form .float-right{
+	background-color: rgb(46, 197, 71);
+	color: black;
+}
+
+.container-fluid .col-lg-9 .card .card-footer .row .text-center{
+	background-color: aquamarine;
+}
+
+
+.container-fluid .col-lg-3 .list-group{
+	position: sticky;
+	top: 120px;
+	z-index: 1;
+}
+
+.container-fluid .row .col-lg-12 .carousel .carousel-inner .carousel-item img{
+	height: 250px;
+	width: 1150px;
+}
+
+footer{
+	background-color: powderblue;
+}
